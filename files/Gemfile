@@ -1,0 +1,58 @@
+# Gems host
+source 'http://rubygems.org'
+
+gem 'rails', '~> 3.0.7'
+
+gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'data_mapper'
+
+# HTML/CSS framework and boilerplate
+gem 'haml'
+gem 'compass'
+gem 'html5-boilerplate'
+gem 'jammit'
+gem 'jquery-rails'
+
+gem 'devise', '~> 1.2.1'        # User authentication (accounts)
+gem "rfc-822", :git => "git://github.com/dim/rfc-822.git"
+gem 'devise_invitable', '~> 0.4.1'
+# gem 'cancan', '~> 1.5.1'      # User authorization (permissions)
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem "exception_notification", :git => "git://github.com/rails/exception_notification", :require => 'exception_notifier'
+
+
+# gem 'will_paginate', '~> 3.0.pre2'  # Pagination of long lists
+# gem 'paperclip', '~> 2.3.8'   # File upload management
+
+group :production do
+  # production ORM/db drivers
+  # gem "dm-postgres-adapter"
+end
+
+group :development, :test, :citest do
+  gem 'capybara'
+  gem 'capybara-envjs'
+  gem 'faker'
+  gem 'cucumber'
+  gem 'machinist'
+  gem 'rcov_plugin', :git => 'git://github.com/incandescent/rcov_plugin.git'
+  gem 'ci_reporter'
+  # rake doc:jsdoc
+  gem 'jsdoc', :git => 'git://github.com/incandescent/jsdoc-gem.git'
+  gem 'jsdoc_plugin', :git => 'git://github.com/incandescent/jsdoc_plugin.git'
+  
+  # uncomment for auto-testing
+  #gem 'ZenTest'
+  #gem "test_notifier"
+  #gem 'autotest-rails'
+  #gem 'redgreen'
+  
+  # uncomment as necessary
+  #gem "test-unit" # 1.9.2 uses mini-test. so we need this otherwise test notifier breaks
+  #gem "autotest-fsevent" # Mac only
+  #gem "autotest-inotify" # Linux only
+  
+end
